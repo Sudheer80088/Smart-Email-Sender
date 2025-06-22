@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Email Sender</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial;
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    h2 {
+      text-align: center;
+    }
+    input, textarea, button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 8px;
+    }
+    label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Smart Email Sender</h2>
+
+  <!-- 1. Google Login (Placeholder) -->
+  <button onclick="alert('Google Login Coming Soon')">🔐 Sign in with Google</button>
+
+  <!-- 2. File Upload -->
+  <label for="emailFile">Upload Email File (.csv):</label>
+  <input type="file" id="emailFile" accept=".csv" />
+
+  <!-- 3. Message Box -->
+  <label for="message">Write Your Message (max 100 words):</label>
+  <textarea id="message" rows="5" maxlength="600" placeholder="Type your message here..."></textarea>
+
+  <!-- 4. Schedule Picker -->
+  <label for="schedule">Pick a Date & Time:</label>
+  <input type="datetime-local" id="schedule" />
+
+  <!-- Submit -->
+  <button onclick="submitForm()">🚀 Schedule Email</button>
+
+  <script>
+    function submitForm() {
+      const file = document.getElementById('emailFile').files[0];
+      const message = document.getElementById('message').value;
+      const schedule = document.getElementById('schedule').value;
+
+      if (!file || !message || !schedule) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      alert("Form Ready to Submit!\n\n📄 File: " + file.name + "\n📝 Message: " + message + "\n⏰ Time: " + schedule);
+    }
+  </script>
+
+</body>
+</html>
